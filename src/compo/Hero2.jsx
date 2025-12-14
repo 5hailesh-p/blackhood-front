@@ -1,25 +1,46 @@
 import { Box, Button, Container, Typography } from "@mui/material";
 
-const Hero = () => {
+const Hero2 = () => {
   return (
     <Box
       sx={{
         position: "relative",
-        minHeight: "90vh",
+        minHeight: "100vh",
         display: "flex",
         alignItems: "center",
-        backgroundImage: `
-          linear-gradient(
-            rgba(13, 13, 13, 0.73),
-            rgba(13, 13, 13, 0.48)
-          ),
-          url("https://images.unsplash.com/photo-1622737133809-d95047b9e673?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
-        `,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
+        overflow: "hidden",
       }}
     >
-      <Container sx={{ textAlign: "center", zIndex: 1 }}>
+      {/* Background Video */}
+      <Box
+        component="video"
+        autoPlay
+        muted
+        loop
+        playsInline
+        sx={{
+          position: "absolute",
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          zIndex: -2,
+        }}
+      >
+        <source src="/hero2Hero2-video.mp4" type="video/mp4" />
+      </Box>
+
+      {/* Gradient Overlay */}
+      <Box
+        sx={{
+          position: "absolute",
+          inset: 0,
+          background:
+            "linear-gradient(180deg, rgba(13,13,13,0.8), rgba(13,13,13,0.95))",
+          zIndex: -1,
+        }}
+      />
+
+      <Container sx={{ textAlign: "center" }}>
         <Typography variant="h2" gutterBottom>
           We Build{" "}
           <Box component="span" sx={{ color: "primary.main" }}>
@@ -44,4 +65,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default Hero2;
