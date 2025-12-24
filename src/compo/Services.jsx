@@ -32,7 +32,7 @@ const Services = () => {
 
                     <Grid container spacing={4}>
                         {services.map((service, index) => (
-                            <Grid item xs={12} md={6} lg={3} key={index}>
+                            <Grid item size={{"md":6, 'sm':12}} key={index}>
                                 <Card>
                                     <CardContent>
                                         <Typography variant="h6" gutterBottom>
